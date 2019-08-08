@@ -3,12 +3,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* margin-left: -500px;
-  margin-top: -500px; */
   width: 500px;
   height: 500px;
   background-color: rgb(70, 70, 70);
-  
+  box-shadow: 0px 0px 10px white;
 }
 
 body{
@@ -28,3 +26,42 @@ i{
   left: 50%;
   transform: translate(-50%);
 }
+
+button{
+  width: 80px;
+  height: 80px;
+  font: 40px "consolas";
+  background-color: black;
+  color: rgb(200, 200, 200);
+  border: 0px solid black;
+  box-shadow: 0px 0px 3px white;
+  cursor: pointer;
+}
+
+button:hover{
+  color: white;
+}
+
+button:active{
+  box-shadow: 0px 0px 0px white;
+}
+
+#result_field{
+  width: 100%;
+  height: 40px;
+  color: green;
+  font: 35px "consolas";
+  background-color: black;
+  border-top: 2px solid rgb(90, 90, 90);
+  border-right: 2px solid  grey;
+  border-bottom: 2px solid grey;
+  border-left: 2px solid rgb(90, 90, 90);
+  text-align: right;
+}
+
+table{
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+}
+
