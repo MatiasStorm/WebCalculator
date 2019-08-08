@@ -1,0 +1,30 @@
+#calculator{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin-left: -500px;
+  margin-top: -500px; */
+  width: 500px;
+  height: 500px;
+  background-color: rgb(70, 70, 70);
+  
+}
+
+body{
+  background-color: black;
+}
+
+h1{
+  color: white;
+  text-align: center;
+}
+
+i{
+  position: absolute;
+  color: white;
+  text-align: center;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%);
+}
