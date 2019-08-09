@@ -34,8 +34,13 @@ button{
   background-color: black;
   color: rgb(200, 200, 200);
   border: 0px solid black;
-  box-shadow: 0px 0px 3px white;
   cursor: pointer;
+  
+  border-top: 2px solid grey;
+  border-right: 2px solid  rgb(90, 90, 90);
+  border-bottom: 2px solid rgb(90, 90, 90);
+  border-left: 2px solid grey;
+  
 }
 
 button:hover{
@@ -43,7 +48,10 @@ button:hover{
 }
 
 button:active{
-  box-shadow: 0px 0px 0px white;
+  border-top: 2px solid rgb(90, 90, 90);
+  border-right: 2px solid  grey;
+  border-bottom: 2px solid grey;
+  border-left: 2px solid rgb(90, 90, 90);
 }
 
 #result_field{
