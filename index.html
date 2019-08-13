@@ -10,7 +10,7 @@
     <div id="calculator">
       <table>
         <tr>
-          <td colspan="6"><input type="text" id="result_field"></td>
+          <td colspan="6"><input type="text" id="result_field" disabled></td>
         </tr>
         <tr>
           <td><button id="1">1</button></td>
@@ -54,24 +54,27 @@
       
       numbers.forEach(val =>{
         $("#" + val).click(function(){
+          this.blur();
           c.typeNum(val);
       })})
       
-      $("#negate").click(function(){c.negate()});
-      $("#dot").click(function(){c.typeOperator(".")});
-      $("#plus").click(function(){c.typeOperator("+")});
-      $("#minus").click(function(){c.typeOperator("-")});
-      $("#times").click(function(){c.typeOperator("*")});
-      $("#divide").click(function(){c.typeOperator("/")});
-      $("#power").click(function(){c.typeOperator("^")});
-      $("#power2").click(function(){c.typeOperator("^2")});
-      $("#right_par").click(function(){c.typeOperator("(")});
-      $("#left_par").click(function(){c.typeOperator(")")});
-      $("#equal").click(function(){c.evalualte()});
-      $("#clear").click(function(){c.clear()});
-      $("#delete").click(function(){c.delete()});
+      $("#negate").click(function()   {this.blur(); c.negate()});
+      $("#dot").click(function()      {this.blur(); c.typeOperator(".")});
+      $("#plus").click(function()     {this.blur(); c.typeOperator("+")});
+      $("#minus").click(function()    {this.blur(); c.typeOperator("-")});
+      $("#times").click(function()    {this.blur(); c.typeOperator("*")});
+      $("#divide").click(function()   {this.blur(); c.typeOperator("/")});
+      $("#power").click(function()    {this.blur(); c.typeOperator("^")});
+      $("#power2").click(function()   {this.blur(); c.typeOperator("^2")});
+      $("#right_par").click(function(){this.blur(); c.typeOperator("(")});
+      $("#left_par").click(function() {this.blur(); c.typeOperator(")")});
+      $("#equal").click(function()    {this.blur(); c.evalualte()});
+      $("#clear").click(function()    {this.blur(); c.clear()});
+      $("#delete").click(function()   {this.blur(); c.delete()});
       
       $("body").keyup(function(event){
+        event.preventDefault();
+        event.stopPropagation();
         var dict = {46: "dot",    110: "#dot",   49:  "#1",     97:  "#1",
                     48: "#0" ,    96:  "#0",     49:  "#1",     97:  "#1",
                     50: "#2" ,    98:  "#2",     51:  "#3",     99:  "#3",
@@ -83,7 +86,7 @@
                     13: "#equal", 106: "#times", 109: "#minus", 107: "#plus",
                     67: "#clear", 80:  "#power"}
         console.log(event.which);
-        $(dict[event.which]).click();
+        $(dict[event.which]).trigger("click");
       })
       
     </script>

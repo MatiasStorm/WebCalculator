@@ -42,7 +42,7 @@ class Calculator{
     }
     
     else if(this.lastChar != "("){
-      if(/[\/*+\.-]$/.test(this.lastChar)) {
+      if(/[\/*+\.\^-]$/.test(this.lastChar)) {
         this.input.val(origVal.substr(0, origVal.length - 1) + op);
         this.lastChar = op;
       }
@@ -65,11 +65,18 @@ class Calculator{
   
   negate(){
     var origVal = this.val();
-    if(origVal.charAt(0) == "-") {
-      this.input.val(origVal.substr(1, origVal.length - 1));
-    }
-    else{
-      this.input.val("-" + origVal);
+    if(/[0-9]/.test(this.lastChar)){
+      // if(/\(\-[0-9]*\)$/.test(this.val())){
+      // 
+      // }
+      // 
+      // 
+      if(origVal.charAt(0) == "-") {
+        this.input.val(origVal.substr(1, origVal.length - 1));
+      }
+      else{
+        this.input.val("-" + origVal);
+      }
     }
   }
   
