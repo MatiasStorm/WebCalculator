@@ -3,9 +3,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
-  padding: 1%;
+  max-width: 500px;
+  max-height: 350px;
+  width: auto;
   height: auto;
+  padding: 1%;
   background-color: rgb(70, 70, 70);
   box-shadow: 0px 0px 10px white;
 }
