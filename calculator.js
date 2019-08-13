@@ -86,29 +86,7 @@ class Calculator{
   }  
 }
 
-c = new Calculator($("#result_field"));
-numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-numbers.forEach(val =>{
-  $("#" + val).click(function(){
-    c.typeNum(val);
-})})
-
-$("#negate").click(function(){c.negate()});
-$("#dot").click(function(){c.typeOperator(".")});
-$("#plus").click(function(){c.typeOperator("+")});
-$("#minus").click(function(){c.typeOperator("-")});
-$("#times").click(function(){c.typeOperator("*")});
-$("#divide").click(function(){c.typeOperator("/")});
-$("#power").click(function(){c.typeOperator("^")});
-$("#power2").click(function(){c.typeOperator("^2")});
-$("#right_par").click(function(){c.typeOperator("(")});
-$("#left_par").click(function(){c.typeOperator(")")});
-
-
-$("#equal").click(function(){c.evalualte()});
-$("#clear").click(function(){c.clear()});
-$("#delete").click(function(){c.delete()});
 
 
 
