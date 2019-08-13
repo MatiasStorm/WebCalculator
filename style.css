@@ -3,8 +3,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
+  width: 40%;
+  padding: 1%;
+  height: auto;
   background-color: rgb(70, 70, 70);
   box-shadow: 0px 0px 10px white;
 }
@@ -22,15 +23,16 @@ i{
   position: absolute;
   color: white;
   text-align: center;
-  top: 85%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%);
 }
 
 button{
-  width: 80px;
-  height: 80px;
-  font: 40px "consolas";
+  width: 100%;
+  height: 100%;
+  font: 3vw "consolas";
+  padding: 2%;
   background-color: black;
   color: rgb(200, 200, 200);
   border: 0px solid black;
@@ -40,7 +42,10 @@ button{
   border-right: 2px solid  rgb(90, 90, 90);
   border-bottom: 2px solid rgb(90, 90, 90);
   border-left: 2px solid grey;
-  
+}
+
+#equal{
+  height: 10vw;
 }
 
 button:hover{
@@ -56,9 +61,9 @@ button:active{
 
 #result_field{
   width: 100%;
-  height: 40px;
+  height: 3vw;
   color: green;
-  font: 35px "consolas";
+  font: 3vw "consolas";
   background-color: black;
   border-top: 2px solid rgb(90, 90, 90);
   border-right: 2px solid  grey;
@@ -70,6 +75,22 @@ button:active{
 table{
   width: 100%;
   height: 100%;
-  padding: 25px;
+  height: auto;
+  border-collapse: collapse;
+}
+
+td{
+  text-align: center;
+  padding: 2%;
+  width: 16.66%;
+}
+
+tr{
+  maring-top: 10px;
+  maring-bottom: 10px;
+}
+
+.separator{
+  border-right: 4px solid rgb(65, 65, 65);
 }
 
