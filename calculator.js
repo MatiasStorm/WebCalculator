@@ -10,10 +10,10 @@ class Calculator{
   }
 
   typeNum(val){
-    if(/[\/*+\(\)-]/.test(this.lastChar) || 
+    if(/[\/*+\(\)\^-]/.test(this.lastChar) || 
        this.lastChar == "" || 
        /\.[0-9]*$/.test(this.val()) || // Allow decimal numbers.
-       /[\/*+\(\)-]*[1-9][0-9]*$/.test(this.val())) { // Operators followed by one 1-9 and n 0-9.
+       /[\/*+\(\)\^-]*[1-9][0-9]*$/.test(this.val())) { // Operators followed by one 1-9 and n 0-9.
       this.input.val(this.val() + val);
       this.lastChar = val;
     }
@@ -85,18 +85,4 @@ class Calculator{
     this.lastChar = origVal.charAt(origVal.length - 2)
   }  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
