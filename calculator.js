@@ -23,7 +23,8 @@ class Calculator{
   }
   
   evalualte(){
-    
+    var expression = this.val().replace("^", "**");
+    this.input.val(eval(expression))
   }
   
   clear(){
@@ -56,7 +57,7 @@ $("#plus").click(function(){c.typeOperator("+")});
 $("#minus").click(function(){c.typeOperator("-")});
 $("#times").click(function(){c.typeOperator("*")});
 $("#divide").click(function(){c.typeOperator("/")});
-$("power").click(function(){c.typeOperator("^")});
+$("#power").click(function(){c.typeOperator("^")});
 $("#equal").click(function(){c.evalualte()});
 $("#clear").click(function(){c.clear()});
 
