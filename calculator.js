@@ -1,7 +1,3 @@
-/* TODO: 
-    - Check input for errors before evaluating.
-*/
-
 class Calculator{
   constructor(inputId){
     this.input = $(inputId);
@@ -21,6 +17,8 @@ class Calculator{
       this.input.val(this.val() + val);
       this.lastChar = val;
     }
+    this.input.css("color", "green");
+    this.input.removeClass("result_field_shake");
   }
   
   typeOperator(op){
@@ -55,17 +53,29 @@ class Calculator{
         this.lastChar = op;
       }
     }
+    this.input.css("color", "green");
+    this.input.removeClass("result_field_shake");
   }
   
   evalualte(){
-    var expression = this.val().replace("^", "**");
-    this.input.val(eval(expression))
+    if(this.parentheces == 0 && !/[\/*\-+\.\^]/.test(this.lastChar)){
+      var expression = this.val().replace("^", "**");
+      this.input.val(eval(expression));
+    }
+    else {
+      this.input.css("color", "red");
+      this.input.removeClass("result_field_shake");
+      setTimeout(function(){$("#result_field").addClass("result_field_shake");}, 10);
+    }
   }
+
   
   clear(){
     this.input.val("");
     this.lastChar = "";
     this.parentheces = 0;
+    this.input.css("color", "green");
+    this.input.removeClass("result_field_shake");
   }
   
   negate(){
@@ -77,12 +87,14 @@ class Calculator{
     else if(/[0-9]/.test(this.lastChar)){
       this.addNegate();
     }
+    this.input.css("color", "green");
+    this.input.removeClass("result_field_shake");
   }
   
   removeNegate(){
     var origVal = this.val();
     var number, numberIndex, newVal;
-    for(var i = origVal.length - 1; i >= 0; i--){ 
+    for(let i = origVal.length - 1; i >= 0; i--){ 
       if(origVal.charAt(i) == "-"){
         numberIndex = i + 1;
         break;
@@ -96,7 +108,7 @@ class Calculator{
   addNegate(){
     var origVal = this.val();
     var number, numberIndex, newVal;
-    for(var i = origVal.length - 1; i >= 0; i--){ 
+    for(let i = origVal.length - 1; i >= 0; i--){ 
       if(( !/[0-9]/.test(origVal.charAt(i)) && origVal.charAt(i) != ".") || i == 0){
         numberIndex = i == 0 ? i : i + 1;
         break;
@@ -123,8 +135,19 @@ class Calculator{
       }
     }
     this.lastChar = origVal.charAt(origVal.length - 2)
+    this.input.css("color", "green");
+    this.input.removeClass("result_field_shake");
   }  
 }
 
+
+function shakeInput(){
+  for(let i = 5; i >= 0; i -= 0.5){
+    $("#result_field").css("transform", "translate(" + i + "px, " + i +"px)");
+    requestAnimationFrame(shakeInput);
+    // this.input.css("transform", "translate(2px, 2px)");
+    console.log(i);
+  }
+}
 
 
