@@ -69,7 +69,6 @@ class Calculator{
     }
   }
 
-  
   clear(){
     this.input.val("");
     this.lastChar = "";
